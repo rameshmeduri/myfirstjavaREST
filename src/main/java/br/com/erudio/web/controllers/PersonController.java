@@ -57,6 +57,7 @@ public class PersonController {
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Person create(@RequestBody Person person){
+		System.out.println(person);
 		Person createdPerson = personService.create(person);
 		String idPerson = createdPerson.getIdPerson().toString();
 		addHATEOASSupport(createdPerson, idPerson);
